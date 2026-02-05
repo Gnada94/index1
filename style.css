@@ -1,0 +1,148 @@
+/* =================================================
+RESET BÁSICO
+remove margens padrão do navegador
+================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =================================================
+CONFIG GERAL DA PÁGINA
+================================================= */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb; /* fundo leve */
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+
+/* =================================================
+HEADER (barra superior)
+logo + menu
+================================================= */
+.topbar {
+  background: linear-gradient(90deg, #0f172a, #1e293b);
+
+  padding: 14px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+
+.topbar img {
+  height: 45px;
+}
+
+
+/* =================================================
+MENU PRINCIPAL
+================================================= */
+.menu {
+  list-style: none;
+
+  display: flex;
+  gap: 20px;
+}
+
+
+/* cada item do menu */
+.menu > li {
+  position: relative; /* referência pro dropdown */
+}
+
+
+/* links principais */
+.menu > li > a {
+  color: white;
+  text-decoration: none;
+
+  padding: 8px 14px;
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: 0.2s;
+}
+
+/* efeito hover */
+.menu > li > a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+
+/* =================================================
+SUBMENU (dropdown)
+================================================= */
+.submenu {
+  list-style: none;
+
+  position: absolute;
+  top: 120%;
+  left: 0;
+
+  background: white;
+
+  min-width: 200px;
+  padding: 10px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,.18);
+
+  /* escondido */
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+
+  transition: 0.25s ease;
+}
+
+/* mostra ao passar mouse */
+.menu > li:hover .submenu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+/* links do submenu */
+.submenu li a {
+  display: block;
+
+  padding: 8px 12px;
+
+  color: #334155;
+  text-decoration: none;
+
+  border-radius: 6px;
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+.submenu li a:hover {
+  background: #f1f5f9;
+}
+
+
+/* =================================================
+MAIN (container central)
+================================================= */
+.container {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+
+/* =================================================
+HERO (primeira seção)
+=============================================
